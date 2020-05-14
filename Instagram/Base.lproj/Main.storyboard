@@ -300,13 +300,52 @@
                     <view key="view" contentMode="scaleToFill" id="0Qa-Cn-bi4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コメントを入力する" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhB-Ec-l1Q">
+                                <rect key="frame" x="57" y="124" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="sVC-rg-0R4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ2-zH-NH6">
+                                <rect key="frame" x="57" y="238" width="300" height="40"/>
+                                <state key="normal" title="コメントを投稿する" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="commentPush:" destination="hif-Bl-Rym" eventType="touchUpInside" id="oMH-Zy-eMO"/>
+                                    <action selector="handleLibraryButton:" destination="rgD-0O-xjv" eventType="touchUpInside" id="TyZ-pQ-lrI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzV-gu-Oi1">
+                                <rect key="frame" x="57" y="298" width="300" height="40"/>
+                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="commentCancel:" destination="hif-Bl-Rym" eventType="touchUpInside" id="hKp-du-WNL"/>
+                                    <action selector="handleLibraryButton:" destination="rgD-0O-xjv" eventType="touchUpInside" id="teQ-Np-hBJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gzV-gu-Oi1" firstAttribute="centerX" secondItem="0Qa-Cn-bi4" secondAttribute="centerX" id="HnE-2T-tOm"/>
+                            <constraint firstItem="gzV-gu-Oi1" firstAttribute="top" secondItem="oJ2-zH-NH6" secondAttribute="bottom" constant="20" id="KbD-Bo-9oC"/>
+                            <constraint firstItem="vhB-Ec-l1Q" firstAttribute="centerX" secondItem="0Qa-Cn-bi4" secondAttribute="centerX" id="Pgd-up-IuI"/>
+                            <constraint firstItem="oJ2-zH-NH6" firstAttribute="top" secondItem="vhB-Ec-l1Q" secondAttribute="bottom" constant="80" id="Wua-IA-Kht"/>
+                            <constraint firstItem="oJ2-zH-NH6" firstAttribute="centerX" secondItem="0Qa-Cn-bi4" secondAttribute="centerX" id="cJz-8C-Psa"/>
+                            <constraint firstItem="oJ2-zH-NH6" firstAttribute="centerX" secondItem="0Qa-Cn-bi4" secondAttribute="centerX" id="hlu-ac-m2b"/>
+                            <constraint firstItem="gzV-gu-Oi1" firstAttribute="centerX" secondItem="0Qa-Cn-bi4" secondAttribute="centerX" id="lSq-Cr-Vs9"/>
+                            <constraint firstItem="vhB-Ec-l1Q" firstAttribute="top" secondItem="fDf-5a-OzN" secondAttribute="top" constant="80" id="nun-TP-d5g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fDf-5a-OzN"/>
                     </view>
+                    <connections>
+                        <outlet property="commenttext" destination="vhB-Ec-l1Q" id="kAa-iq-esx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BbZ-RD-gLt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-763" y="81"/>
+            <point key="canvasLocation" x="-763.768115942029" y="80.357142857142847"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zLP-cU-4Vt">

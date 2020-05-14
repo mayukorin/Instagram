@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import Firebase
 
 class CommentViewController: UIViewController {
     
     var cellId:String!
-
+    @IBOutlet weak var commenttext: UITextField!
+    
+    @IBAction func commentPush(_ sender: Any) {//投稿ボタンが押されたら
+    }
+    @IBAction func commentCancel(_ sender: Any) {//キャンセルボタンが押されたら
+        self.dismiss(animated: true, completion: nil)//ひとつ前の画面に戻る
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(cellId)//受け取ったcellIdからデータの保存場所を取得
+        
 
         // Do any additional setup after loading the view.
     }

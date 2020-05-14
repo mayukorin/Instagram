@@ -64,7 +64,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     
     
-    @objc func handleComment(_ sender: UIButton,forEvent event: UIEvent){
+    @objc func handleComment(_ sender: UIButton,forEvent event: UIEvent){//commentボタンがタップされたら
         print("DEBUG_PRINT: commentボタンがタップされました。")
         
         let touch = event.allTouches?.first
