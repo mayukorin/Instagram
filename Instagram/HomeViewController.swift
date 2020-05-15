@@ -31,6 +31,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
         
+        
 
         // Do any additional setup after loading the view.
     }
@@ -47,8 +48,6 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
         cell.commentButton.addTarget(self, action: #selector(handleComment(_:forEvent:)), for: .touchUpInside)
-        
-        print(cell.captionLabel.text!)
         
         return cell
     }

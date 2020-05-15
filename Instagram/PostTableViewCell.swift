@@ -59,6 +59,13 @@ class PostTableViewCell: UITableViewCell {
             self.likeButton.setImage(buttonImage, for: .normal)
         }
         
+        if postData.comments.count > 0 {
+            comments.sizeToFit();
+            for comment in postData.comments {
+                self.comments.text! += comment + "\n"
+            }
+        }
+        
 
     }
     

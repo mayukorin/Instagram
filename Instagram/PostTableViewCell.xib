@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="503" height="765"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjX-fp-Jin">
-                        <rect key="frame" x="25" y="544.5" width="453" height="199.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjX-fp-Jin">
+                        <rect key="frame" x="25" y="544.5" width="453" height="109.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -55,6 +55,15 @@
                         <rect key="frame" x="116" y="504" width="212" height="40"/>
                         <state key="normal" title="コメントを見る" backgroundImage="btn"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omL-5t-bEw">
+                        <rect key="frame" x="25" y="664" width="453" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="6VA-yx-vYi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="NUg-ma-9NJ" firstAttribute="leading" secondItem="zUD-hj-WK0" secondAttribute="trailing" constant="1" id="0wz-pL-TNE"/>
@@ -62,6 +71,7 @@
                     <constraint firstAttribute="trailingMargin" secondItem="yjX-fp-Jin" secondAttribute="trailing" constant="10" id="6J6-6Z-xH7"/>
                     <constraint firstItem="Yqe-Ox-Mfg" firstAttribute="centerY" secondItem="5x0-KP-qdB" secondAttribute="centerY" id="7O5-2b-mxC"/>
                     <constraint firstItem="yjX-fp-Jin" firstAttribute="top" secondItem="Yqe-Ox-Mfg" secondAttribute="bottom" constant="10" id="7ji-em-ycp"/>
+                    <constraint firstItem="omL-5t-bEw" firstAttribute="top" secondItem="yjX-fp-Jin" secondAttribute="bottom" constant="10" id="8eB-8H-uFL"/>
                     <constraint firstItem="zUD-hj-WK0" firstAttribute="centerY" secondItem="5x0-KP-qdB" secondAttribute="centerY" id="ABt-rs-rkl"/>
                     <constraint firstItem="zUD-hj-WK0" firstAttribute="centerY" secondItem="5x0-KP-qdB" secondAttribute="centerY" id="BYy-y0-mYy"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Cs9-PI-FDy" secondAttribute="trailing" id="Gb4-6z-74Z"/>
@@ -70,26 +80,29 @@
                     <constraint firstAttribute="trailingMargin" secondItem="NUg-ma-9NJ" secondAttribute="trailing" constant="160" id="LYO-91-0yp"/>
                     <constraint firstItem="yjX-fp-Jin" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Lxs-MB-xav"/>
                     <constraint firstItem="Yqe-Ox-Mfg" firstAttribute="centerY" secondItem="5x0-KP-qdB" secondAttribute="centerY" id="Nbm-NL-XLm"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="yjX-fp-Jin" secondAttribute="bottom" constant="10" id="Pyf-D6-byC"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="omL-5t-bEw" secondAttribute="trailing" constant="10" id="Pwe-6i-wDZ"/>
                     <constraint firstItem="Cs9-PI-FDy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="PzN-bJ-1P5"/>
+                    <constraint firstItem="omL-5t-bEw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="ULa-Jl-Pw7"/>
                     <constraint firstItem="Yqe-Ox-Mfg" firstAttribute="centerY" secondItem="5x0-KP-qdB" secondAttribute="centerY" id="Uwz-ze-R7y"/>
                     <constraint firstItem="5x0-KP-qdB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="gJT-rr-1dH"/>
                     <constraint firstItem="Cs9-PI-FDy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="iLS-Ky-A4p"/>
                     <constraint firstItem="Yqe-Ox-Mfg" firstAttribute="leading" secondItem="zUD-hj-WK0" secondAttribute="trailing" constant="10" id="jEY-us-Mhs"/>
                     <constraint firstItem="5x0-KP-qdB" firstAttribute="top" secondItem="Cs9-PI-FDy" secondAttribute="bottom" constant="10" id="n84-AK-qOR"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Yqe-Ox-Mfg" secondAttribute="trailing" constant="10" id="vD4-Hx-FIa"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="omL-5t-bEw" secondAttribute="bottom" constant="10" id="w0l-Ds-i1H"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="yjX-fp-Jin" id="HeB-6w-NYv"/>
                 <outlet property="commentButton" destination="NUg-ma-9NJ" id="dZC-si-gDj"/>
+                <outlet property="comments" destination="omL-5t-bEw" id="flg-X6-3ix"/>
                 <outlet property="dateLabel" destination="Yqe-Ox-Mfg" id="QuG-Mq-mTq"/>
                 <outlet property="likeButton" destination="5x0-KP-qdB" id="2I7-7o-Q6u"/>
                 <outlet property="likeLabel" destination="zUD-hj-WK0" id="LP0-1m-OaL"/>
                 <outlet property="postImageView" destination="Cs9-PI-FDy" id="9No-UN-d8a"/>
             </connections>
-            <point key="canvasLocation" x="8" y="576"/>
+            <point key="canvasLocation" x="6.5625" y="575.625"/>
         </tableViewCell>
     </objects>
     <resources>
