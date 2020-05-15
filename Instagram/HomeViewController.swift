@@ -87,7 +87,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         
         let CommentViewController = self.storyboard?.instantiateViewController(identifier: "comment") as! CommentViewController//CommentViewControllerを呼び出す
-        CommentViewController.post = postData
+        CommentViewController.post = postData//postData型のオブジェクトを渡す
         
         self.present(CommentViewController, animated: true, completion: nil)//CommentViewControllerに遷移する
         

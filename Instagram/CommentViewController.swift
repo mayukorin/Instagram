@@ -47,12 +47,12 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
         // Do any additional setup after loading the view.
     }
     
-    func tableView(_ tableView:UITableView,numberOfRowsInSection section:Int) -> Int {
+    func tableView(_ tableView:UITableView,numberOfRowsInSection section:Int) -> Int {//コメント一覧の個数を変える
         
         return post.comments.count
     
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {//コメント一つ一つを表示させる
         
         let cell = commentView.dequeueReusableCell(withIdentifier: "Cell",for:indexPath)
         
