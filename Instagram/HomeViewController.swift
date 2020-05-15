@@ -13,8 +13,16 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
 
     @IBOutlet weak var tableView: UITableView!
     
+    
     var listener: ListenerRegistration!
     var postArray: [PostData] = []
+    
+    var i:Int = 0
+    var flag:Int = 0//コメントの用のセルか、投稿用のセルか
+    var count:Int=0//コメント数
+    var datapath:Int = 0//投稿のデータのインデックスを保存する
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -22,6 +30,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
+        
 
         // Do any additional setup after loading the view.
     }
@@ -31,12 +40,15 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     
     func tableView(_ tableView: UITableView,cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",for:indexPath) as! PostTableViewCell
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
         cell.setPostData(postArray[indexPath.row])
+
+        // セル内のボタンのアクションをソースコードで設定する
+        cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        cell.commentButton.addTarget(self, action: #selector(handleComment(_:forEvent:)), for: .touchUpInside)
         
-        cell.likeButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside)
-        cell.commentButton.addTarget(self, action: #selector(handleComment(_:forEvent:)), for:.touchUpInside)
-        
+        print(cell.captionLabel.text!)
         
         return cell
     }
@@ -73,8 +85,9 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         let postData = postArray[indexPath!.row]
         
+        
         let CommentViewController = self.storyboard?.instantiateViewController(identifier: "comment") as! CommentViewController//CommentViewControllerを呼び出す
-        CommentViewController.cellId = postData.id
+        CommentViewController.post = postData
         
         self.present(CommentViewController, animated: true, completion: nil)//CommentViewControllerに遷移する
         

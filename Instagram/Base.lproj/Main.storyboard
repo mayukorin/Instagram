@@ -325,21 +325,40 @@
                                     <action selector="handleLibraryButton:" destination="rgD-0O-xjv" eventType="touchUpInside" id="teQ-Np-hBJ"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3oi-ll-uJm">
+                                <rect key="frame" x="0.0" y="358" width="414" height="504"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Ypf-Ui-iBv">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ypf-Ui-iBv" id="8n6-Ug-GU5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="gzV-gu-Oi1" firstAttribute="centerX" secondItem="0Qa-Cn-bi4" secondAttribute="centerX" id="HnE-2T-tOm"/>
+                            <constraint firstItem="fDf-5a-OzN" firstAttribute="trailing" secondItem="3oi-ll-uJm" secondAttribute="trailing" id="IIm-6j-mkh"/>
                             <constraint firstItem="gzV-gu-Oi1" firstAttribute="top" secondItem="oJ2-zH-NH6" secondAttribute="bottom" constant="20" id="KbD-Bo-9oC"/>
+                            <constraint firstItem="3oi-ll-uJm" firstAttribute="top" secondItem="gzV-gu-Oi1" secondAttribute="bottom" constant="20" id="LNw-i6-swk"/>
                             <constraint firstItem="vhB-Ec-l1Q" firstAttribute="centerX" secondItem="0Qa-Cn-bi4" secondAttribute="centerX" id="Pgd-up-IuI"/>
                             <constraint firstItem="oJ2-zH-NH6" firstAttribute="top" secondItem="vhB-Ec-l1Q" secondAttribute="bottom" constant="80" id="Wua-IA-Kht"/>
                             <constraint firstItem="oJ2-zH-NH6" firstAttribute="centerX" secondItem="0Qa-Cn-bi4" secondAttribute="centerX" id="cJz-8C-Psa"/>
                             <constraint firstItem="oJ2-zH-NH6" firstAttribute="centerX" secondItem="0Qa-Cn-bi4" secondAttribute="centerX" id="hlu-ac-m2b"/>
+                            <constraint firstItem="3oi-ll-uJm" firstAttribute="bottom" secondItem="fDf-5a-OzN" secondAttribute="bottom" id="jyW-tb-2C9"/>
                             <constraint firstItem="gzV-gu-Oi1" firstAttribute="centerX" secondItem="0Qa-Cn-bi4" secondAttribute="centerX" id="lSq-Cr-Vs9"/>
                             <constraint firstItem="vhB-Ec-l1Q" firstAttribute="top" secondItem="fDf-5a-OzN" secondAttribute="top" constant="80" id="nun-TP-d5g"/>
+                            <constraint firstItem="3oi-ll-uJm" firstAttribute="leading" secondItem="fDf-5a-OzN" secondAttribute="leading" id="ugR-nk-Hli"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fDf-5a-OzN"/>
                     </view>
                     <connections>
+                        <outlet property="commentView" destination="3oi-ll-uJm" id="1DH-68-7Z8"/>
                         <outlet property="commenttext" destination="vhB-Ec-l1Q" id="kAa-iq-esx"/>
                     </connections>
                 </viewController>

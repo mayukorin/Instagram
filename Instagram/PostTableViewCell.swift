@@ -11,6 +11,10 @@ import FirebaseUI
 
 class PostTableViewCell: UITableViewCell {
 
+    
+    
+    
+    @IBOutlet weak var comments: UILabel!//コメントを表示する
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -34,6 +38,7 @@ class PostTableViewCell: UITableViewCell {
         postImageView.sd_setImage(with: imageRef)
         
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
+        
         
         self.dateLabel.text = ""
         if let date = postData.date {
