@@ -60,6 +60,7 @@ class PostTableViewCell: UITableViewCell {
         }
         
         if postData.comments.count > 0 {
+            self.comments.text! = ""//まずtextをリセットする
             comments.sizeToFit();
             for comment in postData.comments {
                 self.comments.text! += comment + "\n"
